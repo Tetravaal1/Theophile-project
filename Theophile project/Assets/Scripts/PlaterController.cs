@@ -2,18 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Animator))]
+
 public class PlaterController : MonoBehaviour {
 
     private Rigidbody2D rb2d;
     private Animator anim;
 
-    public float h;
-    public float v;
+    private float h;
+    private float v;
 
-    public float speed;
+    [SerializeField]
+    private float speed;
 
     //(Attention complexe !) Si t'as vraiment besoin que je t'explique ça je peux mais c'est complexe. Je l'ai mis comme ça pour que tu comprennes mieux le reste du code.
     public enum Direction { Haut, Droite, Bas, Gauche };
+    [HideInInspector]
     public Direction currentDirection = Direction.Bas;
 
     void Start () {
