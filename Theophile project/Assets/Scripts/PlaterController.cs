@@ -44,6 +44,7 @@ public class PlaterController : MonoBehaviour {
             anim.SetBool("isMoving", true);
             //Ensuite je regarde dans quel direction il veut aller
             //Et j'assigne dans une variable cette direction
+            
             if (v > 0)
             {
                 currentDirection = Direction.Haut;

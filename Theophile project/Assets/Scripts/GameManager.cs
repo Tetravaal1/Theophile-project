@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
     private Animator coffre;
 
 	void Start () {
-        coffre = GameObject.FindGameObjectWithTag("Coffre").GetComponent<Animator>();
+        //coffre = GameObject.FindGameObjectWithTag("Coffre").GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
