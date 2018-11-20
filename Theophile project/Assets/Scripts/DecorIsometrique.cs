@@ -27,7 +27,7 @@ public class DecorIsometrique : MonoBehaviour {
 
     private void LateUpdate()
     {
-        posY = (transform.position.y - halfHeight + hauteurLigneBlanche) * 5;
+        posY = (transform.position.y - halfHeight + hauteurLigneBlanche) * 20;
         sRenderer.sortingOrder = -Mathf.RoundToInt(posY);
     }
 

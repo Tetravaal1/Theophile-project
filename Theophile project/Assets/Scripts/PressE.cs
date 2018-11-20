@@ -6,7 +6,6 @@ using UnityEngine;
 public class PressE : MonoBehaviour {
 
     public GameObject leboutton;
-    public Vector3 buttonPos;
     private GameObject buttonE;
     private Vector3 offset = new Vector3(0.65f, 0.70f, 0f);
 

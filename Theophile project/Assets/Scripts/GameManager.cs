@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-	// Use this for initialization
+    private Animator coffre;
+
 	void Start () {
-		
+        coffre = GameObject.FindGameObjectWithTag("Coffre").GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -15,6 +16,6 @@ public class GameManager : MonoBehaviour {
 	}
 
     public void Changement() {
-        Debug.Log("prout");
+        coffre.SetTrigger("Open");
     }
 }
