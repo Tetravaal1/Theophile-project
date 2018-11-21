@@ -16,6 +16,8 @@ public class PlaterController : MonoBehaviour {
     [SerializeField]
     private float speed;
 
+    private Vector3 flippo = new Vector3(-1, 1, 1);
+
     //(Attention complexe !) Si t'as vraiment besoin que je t'explique ça je peux mais c'est complexe. Je l'ai mis comme ça pour que tu comprennes mieux le reste du code.
     public enum Direction { Haut, Droite, Bas, Gauche };
     [HideInInspector]
@@ -42,6 +44,7 @@ public class PlaterController : MonoBehaviour {
             anim.SetBool("isMoving", true);
             //Ensuite je regarde dans quel direction il veut aller
             //Et j'assigne dans une variable cette direction
+            
             if (v > 0)
             {
                 currentDirection = Direction.Haut;
@@ -62,6 +65,14 @@ public class PlaterController : MonoBehaviour {
         else {
             //dit à l'animator que le personnage est immobile.
             anim.SetBool("isMoving", false);
+        }
+
+        if (currentDirection == Direction.Gauche)
+        {
+            transform.localScale = flippo;
+        }
+        else {
+            transform.localScale = Vector3.one;
         }
 
         //Bouge dans la direction voulue et ajoute un facteur reglable de vitesse.
