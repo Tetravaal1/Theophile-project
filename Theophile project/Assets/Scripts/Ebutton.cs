@@ -4,24 +4,14 @@ using UnityEngine;
 
 public class Ebutton : MonoBehaviour {
 
-    private SpriteRenderer sRenderer;
-    private GameManager gameManager;
-    public Sprite bouttonPresse;
-
+    public Transform player;
+    public float speed;
 	void Start () {
-        sRenderer = GetComponent<SpriteRenderer>();
-        gameManager = FindObjectOfType<GameManager>();
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            sRenderer.sprite = bouttonPresse;
-        }
-        if(Input.GetKeyUp(KeyCode.E)) {
-            gameManager.Changement();
-            Destroy(gameObject);
-        }
+       // transform.position = Vector3.MoveTowards(transform.position, player.position, speed*Time.deltaTime);
 	}
 }
